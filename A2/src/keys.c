@@ -69,6 +69,7 @@ void keys_init( void )
 /**
    @brief Keys SM for polled operation
 
+   @param index
  */
 uint32_t  keys_update( )
 {

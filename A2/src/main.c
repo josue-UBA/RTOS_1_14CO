@@ -28,6 +28,8 @@ typedef enum
     STATE_ON
 } led_state_t;
 
+#define DEFAULT_PERIOD  1000
+
 /*==================[definiciones de datos internos]=========================*/
 
 /*==================[definiciones de datos externos]=========================*/
@@ -37,6 +39,7 @@ uint32_t led_state;
 
 /*==================[declaraciones de funciones externas]====================*/
 void task_tecla( void* param );
+void task_led( void* param );
 
 /*==================[funcion principal]======================================*/
 
@@ -62,6 +65,13 @@ int main( void )
                       DEBOUNCE_TIME // periodicidad de ejecucion en ticks
                     );
 
+    /* planifico que la tarea de LED se ejecute en 0 ticks */
+    schedulerAddTask(  task_led,      // funcion de tarea a agregar
+                       0,             // parametro de la tarea
+                       0,             // offset -> 0 = "ejecutate inmediatamente"
+                       DEFAULT_PERIOD // periodicidad de ejecucion en ticks
+                    );
+
     // FUNCION que inicializa la interrupcion que ejecuta el planificador de
     // tareas con tick cada 1ms.
     schedulerStart( 1 );
@@ -84,21 +94,28 @@ int main( void )
 }
 
 /*==================[definiciones de funciones internas]=====================*/
-
 void task_led( void* param )
 {
     if( led_state == STATE_OFF )
     {
         tick_t key_time_diff = keys_get_diff( );
 
+        if(  key_time_diff==KEYS_INVALID_TIME || key_time_diff>= DEFAULT_PERIOD )
+        {
+            //uso el DEFAULT_PERIOD/2
+            key_time_diff = DEFAULT_PERIOD/2 ;
+        }
+
         /* toggle del led */
         gpioToggle( LEDB );
+
         /* cambio de estado al led */
         led_state = STATE_ON;
+
         /* planifico el apagado del led */
         schedulerAddTask( task_led,               // funcion de tarea a agregar
                           0,                    // parametro de la tarea
-                          key_time_diff ,        // offset de ejecucion en ticks
+                          key_time_diff,        // offset de ejecucion en ticks
                           0                     // periodicidad de ejecucion en ticks
                         );
     }
@@ -110,7 +127,6 @@ void task_led( void* param )
         /* cambio de estado al led */
         led_state = STATE_OFF;
 
-        keys_clear_diff();
     }
 }
 
@@ -124,12 +140,7 @@ void task_tecla( void* param )
     }
     else if( event == KEYS_EVENT_KEY_UP )
     {
-        /* planifico que la tarea de LED se ejecute en 0 ticks */
-        schedulerAddTask(  task_led,      // funcion de tarea a agregar
-                           0,             // parametro de la tarea
-                           0,             // offset -> 0 = "ejecutate inmediatamente"
-                           0              // periodicidad de ejecucion en ticks
-                        );
+        /* no hago nada */
     }
 }
 /*==================[definiciones de funciones externas]=====================*/
