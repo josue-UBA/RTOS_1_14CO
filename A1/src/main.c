@@ -98,7 +98,7 @@ void task_led( void* param )
         /* planifico el apagado del led */
         schedulerAddTask( task_led,               // funcion de tarea a agregar
                           0,                    // parametro de la tarea
-                          key_time_diff ,        // offset de ejecucion en ticks
+                          key_time_diff,         // offset de ejecucion en ticks
                           0                     // periodicidad de ejecucion en ticks
                         );
     }

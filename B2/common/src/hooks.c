@@ -62,8 +62,6 @@ extern TaskHandle_t task_handle_task2;
 /* hook "one shot" que se ejecuta en el while 1 de la tarea IDLE: */
 void vApplicationIdleHook()
 {
-    delay_con_while( 1000 );
-
     PRINTF( "Task %u min %u words\r\n", 1,  uxTaskGetStackHighWaterMark( task_handle_task1 ) );
     PRINTF( "Task %u min %u words\r\n", 2,  uxTaskGetStackHighWaterMark( task_handle_task2 ) );
 }

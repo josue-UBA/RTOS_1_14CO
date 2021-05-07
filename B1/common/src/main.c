@@ -182,8 +182,8 @@ void Tarea_Monitor_Code( void* taskParmPtr )
         delay_con_while( 1000 );
 
         PRINTF( "Task %u min %u words\r\n", 1,  uxTaskGetStackHighWaterMark( task_handle_task1 ) );
-        PRINTF( " Task %u min %u words\r\n", 2,  uxTaskGetStackHighWaterMark( task_handle_task2 ) );
-        PRINTF( " Task %u min %u words\r\n", 3,  uxTaskGetStackHighWaterMark( task_handle_task3) );
+        PRINTF( "Task %u min %u words\r\n", 2,  uxTaskGetStackHighWaterMark( task_handle_task2 ) );
+        PRINTF( "Task %u min %u words\r\n", 3,  uxTaskGetStackHighWaterMark( task_handle_task3 ) );
     }
 }
 
