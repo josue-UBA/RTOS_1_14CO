@@ -1,21 +1,30 @@
 # RTOS_1
 # [**Recorda completar la encuestra clase a clase**](https://forms.gle/RvphazRZdpaU6VWG8)
 
-Material did醕tico para la asignatura Sistemas Operativos en Tiempo Real de la Carrera de Especializaci髇 en Sistemas Embebidos.
- 
+Material did谩ctico para la asignatura Sistemas Operativos en Tiempo Real de la Carrera de Especializaci贸n en Sistemas Embebidos.
+
 
 ## Compatibilidad de los ejercicios
 
 Los ejecicios son compatibles con el framework firmware v3 (https://github.com/epernia/firmware_v3)
 
-Los ejercicios de la Gu韆 A, ademas, son compatibles con el framework (en desarrollo) (https://github.com/fbucafusco/embedded_framework) para correr aplicaciones de FreeRTOS simuladas en la PC.
+Los ejercicios de la Gu铆a A, ademas, son compatibles con el framework (en desarrollo) (https://github.com/fbucafusco/embedded_framework) para correr aplicaciones de FreeRTOS simuladas en la PC.
 
-## Ejercicios
+## **Ejercicios**
 
-### Guia A
-| Ejercicio | Descripci髇 | Tipo |
+### __Guia A__
+| Ejercicio | Descripci贸n | Tipo |
 | :-: | :-: | :-: |
-| A_1 | Tecla con Led utilizando Pont  			| Explicado en clase  |
+| A_1 | Tecla con Led utilizando Pont  			    | Explicado en clase  |
 | A_2 | Tecla con Led periodico utilizando PONT 	| Explicado en clase  |
-| A_3 | Teclas con LED utilizando Pont | Obligatorio    | OBLIGATORIO         |
-| A_4 | UART RX                                         | Extra para el hogar |
+| A_3 | Teclas con LED utilizando Pont | OBLIGATORIO    |
+| A_4 | UART RX     | Extra para el hogar |
+
+
+### __Guia B__
+| Ejercicio | Descripci贸n | Tipo |
+| :-: | :-: | :-: |
+| B_1 | Control del stack  | Explicado en clase |
+| B_2 | Extensi贸n conceptual de A1 | Explicado en clase |
+| B_3 | Suspension y reanudacion de tareas y prioridades | Explicado en clase  |
+| B_4 | B3 sin Round Robin | OBLIGATORIO |
