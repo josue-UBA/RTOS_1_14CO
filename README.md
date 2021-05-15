@@ -28,3 +28,17 @@ Los ejercicios de la Guía A, ademas, son compatibles con el framework (en desar
 | B_2 | Extensión conceptual de A1 | Explicado en clase |
 | B_3 | Suspension y reanudacion de tareas y prioridades | Explicado en clase  |
 | B_4 | B3 sin Round Robin | OBLIGATORIO |
+
+### __Guia C__
+| Ejercicio | Descripción | Tipo |
+| :-: | :-: | :-: |
+| C_1 | Demoras fijas  | Explicado en clase |
+| C_2 | Períodos fijos | Explicado en clase |
+| C_3 | Medir tiempo transcurrido | Explicado en clase |
+| C_4 | B_3 multitecla | Explicado en clase |
+| C_5 | One-shot | Explicado en clase |
+| C_6 | Tick rate modificado | Explicado en clase |
+| C_7 | Integrador | OBLIGATORIO |
+| C_8 | Extensión de B.7 | Ejercitación extra |
+| C_9 | Transmisión de UART simulada por soft | Ejercitación extra |
+| C_10 | Recepción de UART simulada por soft | Ejercitación extra |
