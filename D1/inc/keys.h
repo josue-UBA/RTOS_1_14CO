@@ -14,6 +14,8 @@
 #include "task.h"
 #include "sapi.h"
 
+#include "semphr.h"
+
 /* public macros ================================================================= */
 #define KEYS_INVALID_TIME   -1
 /* types ================================================================= */
