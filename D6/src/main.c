@@ -20,15 +20,15 @@
 #define RATE 1000
 #define LED_RATE pdMS_TO_TICKS(RATE)
 
-#define WELCOME_MSG  "Ejercicio D_5.\r\n"
+#define WELCOME_MSG  "Ejercicio D_6.\r\n"
 #define USED_UART UART_USB
 #define UART_RATE 115200
 #define MALLOC_ERROR "Malloc Failed Hook!\n"
 #define MSG_ERROR_SEM "Error al crear los semaforos.\r\n"
 #define LED_ERROR LEDR
 /*==================[definiciones de datos internos]=========================*/
-gpioMap_t leds_t[] = {LEDB};
-gpioMap_t gpio_t[] = {GPIO7};
+gpioMap_t leds_t[] = {LEDB,LED1,LED2,LED3};
+gpioMap_t gpio_t[] = {GPIO7,GPIO5,GPIO3,GPIO1};
 /*==================[definiciones de datos externos]=========================*/
 DEBUG_PRINT_ENABLE;
 

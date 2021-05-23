@@ -21,7 +21,7 @@
 #define LED_RATE pdMS_TO_TICKS(RATE)
 
 #define N_SEM 			4
-#define WELCOME_MSG  "Ejercicio C_3.\r\n"
+#define WELCOME_MSG  "Ejercicio D_3.\r\n"
 #define USED_UART UART_USB
 #define UART_RATE 115200
 #define MALLOC_ERROR "Malloc Failed Hook!\n"
