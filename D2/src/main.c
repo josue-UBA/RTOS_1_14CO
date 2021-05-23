@@ -95,6 +95,8 @@ void gpio_init( void )
 {
     uint32_t i;
 
+    gpioInit ( GPIO0 , GPIO_OUTPUT );
+
     for( i = 0 ; i < LED_COUNT; i++ )
     {
         gpioInit ( gpio_t[i], GPIO_OUTPUT );
@@ -117,6 +119,9 @@ void tarea_led( void* taskParmPtr )
         xSemaphoreTake( keys_config[index].sem_btn, portMAX_DELAY );			// Esperamos tecla
 
         dif = get_diff( index );
+        if ( dif > LED_RATE )
+        	dif = LED_RATE;
+
         clear_diff( index );
 
         gpioWrite( leds_t[index], ON );

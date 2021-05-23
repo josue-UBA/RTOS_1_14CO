@@ -67,12 +67,7 @@ void keys_Init( void )
         keys_config[i].sem_btn = xSemaphoreCreateBinary();
 
         // Gestion de errores de semaforos
-        if( keys_config[i].sem_btn == NULL )
-        {
-            gpioWrite( LEDR, ON );
-            printf( "Error al crear los semaforos.\r\n" );
-            while( TRUE );						// VER ESTE LINK: https://pbs.twimg.com/media/BafQje7CcAAN5en.jpg
-        }
+        configASSERT( keys_config[i].sem_btn !=  NULL  );
     }
 
     // Crear tareas en freeRTOS
@@ -179,7 +174,9 @@ static void buttonReleased( uint32_t index )
 
     if ( keys_data[index].time_diff  > 0 )
     {
+    	gpioWrite( GPIO0, ON );
         xSemaphoreGive( keys_config[index].sem_btn );
+        gpioWrite( GPIO0, OFF );
     }
 }
 
