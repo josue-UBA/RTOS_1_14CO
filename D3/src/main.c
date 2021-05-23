@@ -83,15 +83,10 @@ int main( void )
     keys_Init();
 
     // Crear semaforo
-    sem_btn = xSemaphoreCreateCounting( N_SEM, 0 );
+    sem_btn = xSemaphoreCreateCounting( N_SEM , 0 );
 
     // Gestion de errores de semaforos
-    if( sem_btn == NULL )
-    {
-        gpioWrite( LED_ERROR, ON );
-        printf( MSG_ERROR_SEM );
-        while( TRUE );						// VER ESTE LINK: https://pbs.twimg.com/media/BafQje7CcAAN5en.jpg
-    }
+    configASSERT( sem_btn !=  NULL  );
 
     // Iniciar scheduler
     vTaskStartScheduler();					// Enciende tick | Crea idle y pone en ready | Evalua las tareas creadas | Prioridad mas alta pasa a running

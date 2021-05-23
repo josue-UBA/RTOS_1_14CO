@@ -159,11 +159,11 @@ static void buttonReleased( uint32_t index )
     TickType_t current_tick_count = xTaskGetTickCount();
 
     taskENTER_CRITICAL();
-    keys_data[0].time_up    = current_tick_count;
-    keys_data[0].time_diff  = keys_data[0].time_up - keys_data[0].time_down;
+    keys_data[index].time_up    = current_tick_count;
+    keys_data[index].time_diff  = keys_data[index].time_up - keys_data[index].time_down;
     taskEXIT_CRITICAL();
 
-    if ( keys_data[0].time_diff  > 0 )
+    if ( keys_data[index].time_diff  > 0 )
     {
         xSemaphoreGive( sem_btn );
         xSemaphoreGive( sem_btn );
