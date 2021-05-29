@@ -83,7 +83,7 @@ int main( void )
     keys_Init();
 
     // Crear semaforo
-    sem_btn = xSemaphoreCreateCounting( N_SEM , 0 );
+    sem_btn = xSemaphoreCreateCounting( N_SEM, 0 );
 
     // Gestion de errores de semaforos
     configASSERT( sem_btn !=  NULL  );

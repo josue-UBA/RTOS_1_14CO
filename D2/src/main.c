@@ -95,7 +95,7 @@ void gpio_init( void )
 {
     uint32_t i;
 
-    gpioInit ( GPIO0 , GPIO_OUTPUT );
+    gpioInit ( GPIO0, GPIO_OUTPUT );
 
     for( i = 0 ; i < LED_COUNT; i++ )
     {
@@ -120,7 +120,9 @@ void tarea_led( void* taskParmPtr )
 
         dif = get_diff( index );
         if ( dif > LED_RATE )
-        	dif = LED_RATE;
+        {
+            dif = LED_RATE;
+        }
 
         clear_diff( index );
 

@@ -174,7 +174,7 @@ static void buttonReleased( uint32_t index )
 
     if ( keys_data[index].time_diff  > 0 )
     {
-    	gpioWrite( GPIO0, ON );
+        gpioWrite( GPIO0, ON );
         xSemaphoreGive( keys_config[index].sem_btn );
         gpioWrite( GPIO0, OFF );
     }

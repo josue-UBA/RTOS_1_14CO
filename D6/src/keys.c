@@ -65,7 +65,7 @@ void keys_Init( void )
         keys_data[i].time_diff      = KEYS_INVALID_TIME;
 
         keys_config[i].btn          = btn_t[i];
-        keys_config[i].sem_btn = xSemaphoreCreateCounting(N_SEM , 0);
+        keys_config[i].sem_btn = xSemaphoreCreateCounting( N_SEM, 0 );
 
         // Gestion de errores de semaforos
         configASSERT( keys_config[i].sem_btn !=  NULL  );

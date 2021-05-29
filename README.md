@@ -51,3 +51,13 @@ Los ejercicios de la Guía A, ademas, son compatibles con el framework (en desar
 | D_4 | Espera de semaforo | OBLIGATORIO |
 | D_5 | Contador de eventos | Explicado en clase |
 | D_6 | D_5 modular | Explicado en clase |
+
+### Guia E
+| Ejercicio | Descripción | Tipo |
+| :-: | :-: | :-: |
+| E_1 | printf conflictivo | Explicado en clase |
+| E_2 | El B7 tiene errores !  | Explicado en clase |
+| E_3 | Más acceso concurrente | Ejercitación extra |
+| E_4 | Acceso a un módulo desde varias tareas | OBLIGATORIO |
+| E_5 | Inversión de prioridades | Explicado en clase |
+| E_6 | Inversión de prioridades + UART | Ejercitación extra |
