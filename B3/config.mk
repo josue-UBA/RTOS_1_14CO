@@ -1,6 +1,6 @@
 # Compile options
 VERBOSE=n
-OPT=g
+OPT=2
 USE_NANO=n
 SEMIHOST=n
 USE_FPU=y
@@ -19,6 +19,6 @@ INCLUDES += -I$(PROGRAM_PATH_AND_NAME)/educiaa/inc
 #EXTRA SOURCE FILES
 SRC += $(wildcard $(PROGRAM_PATH_AND_NAME)/common/src/*.c)
 
+ 
 
-
-
+ 
